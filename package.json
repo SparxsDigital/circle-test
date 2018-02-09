@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
     "jasmine": "^3.0.0"
+  },
+  "dependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }
